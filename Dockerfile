@@ -16,8 +16,7 @@ RUN npm install yarn@1.7.0 -g
 WORKDIR /src
 COPY . .
 
-RUN mkdir /poST-IDE-workspaces
-
-CMD ./run-backend.sh 0.0.0.0 3000 /poST-IDE-workspaces
+RUN mkdir /EDTL-IDE-workspaces
+CMD ./run-backend.sh 0.0.0.0 3000 /EDTL-IDE-workspaces
 
 EXPOSE 3000

@@ -1,26 +1,26 @@
 import { LanguageGrammarDefinitionContribution, TextmateRegistry } from '@theia/monaco/lib/browser/textmate';
 import { injectable } from 'inversify';
-import { POST_LANGUAGE_FILE_EXTENSION, POST_LANGUAGE_SERVER_ID, POST_LANGUAGE_SERVER_NAME } from '../common';
+import { EDTL_LANGUAGE_FILE_EXTENSION, EDTL_LANGUAGE_SERVER_ID, EDTL_LANGUAGE_SERVER_NAME } from '../common';
 
 @injectable()
 export class PoSTGrammarContribution implements LanguageGrammarDefinitionContribution {
-    readonly scopeName = "source.post";
+    readonly scopeName = "source.edtl";
     readonly scopeNameST = "source.st";
 
     registerTextmateLanguage(registry: TextmateRegistry) {
         monaco.languages.register({
-            id: POST_LANGUAGE_SERVER_ID,
+            id: EDTL_LANGUAGE_SERVER_ID,
             aliases: [
-                POST_LANGUAGE_SERVER_NAME, POST_LANGUAGE_SERVER_ID
+                EDTL_LANGUAGE_SERVER_NAME, EDTL_LANGUAGE_SERVER_ID
             ],
             extensions: [
-                POST_LANGUAGE_FILE_EXTENSION,
+                EDTL_LANGUAGE_FILE_EXTENSION,
             ],
             mimetypes: [
                 'text/sm'
             ]
         });
-        monaco.languages.setLanguageConfiguration(POST_LANGUAGE_SERVER_ID, this.configuration);
+        monaco.languages.setLanguageConfiguration(EDTL_LANGUAGE_SERVER_ID, this.configuration);
 
         registry.registerTextmateGrammarScope(this.scopeName, {
             async getGrammarDefinition() {
@@ -30,7 +30,7 @@ export class PoSTGrammarContribution implements LanguageGrammarDefinitionContrib
                 }
             }
         });
-        registry.mapLanguageIdToTextmateGrammar(POST_LANGUAGE_SERVER_ID, this.scopeName);
+        registry.mapLanguageIdToTextmateGrammar(EDTL_LANGUAGE_SERVER_ID, this.scopeName);
 
         registry.registerTextmateGrammarScope(this.scopeNameST, {
             async getGrammarDefinition() {

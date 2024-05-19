@@ -1,4 +1,4 @@
-export const POST_LANGUAGE_FILE_EXTENSION = '.post'
-export const POST_LANGUAGE_SERVER_ID = 'poST'
-export const POST_LANGUAGE_SERVER_NAME = 'poST DSL'
-export const POST_LANGUAGE_SERVER_JAR_NAME = 'su.nsk.iae.post.ide-0.2.2-ls.jar'
+export const EDTL_LANGUAGE_FILE_EXTENSION = '.edtl'
+export const EDTL_LANGUAGE_SERVER_ID = 'edtl'
+export const EDTL_LANGUAGE_SERVER_NAME = 'edtl DSL'
+export const EDTL_LANGUAGE_SERVER_JAR_NAME = 'su.nsk.iae.edtl.ide-1.0.0-SNAPSHOT-ls.jar'

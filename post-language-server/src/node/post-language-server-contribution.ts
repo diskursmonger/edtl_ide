@@ -4,12 +4,12 @@ import * as path from 'path';
 import * as net from 'net';
 import { createSocketConnection } from 'vscode-ws-jsonrpc/lib/server';
 
-import { POST_LANGUAGE_SERVER_ID, POST_LANGUAGE_SERVER_NAME, POST_LANGUAGE_SERVER_JAR_NAME } from '../common';
+import { EDTL_LANGUAGE_SERVER_ID, EDTL_LANGUAGE_SERVER_NAME, EDTL_LANGUAGE_SERVER_JAR_NAME } from '../common';
 
 @injectable()
 export class PoSTLanguageServerContribution extends BaseLanguageServerContribution {
-    readonly id = POST_LANGUAGE_SERVER_ID;    
-    readonly name = POST_LANGUAGE_SERVER_NAME;
+    readonly id = EDTL_LANGUAGE_SERVER_ID;    
+    readonly name = EDTL_LANGUAGE_SERVER_NAME;
 
     start(clientConnection: IConnection, options: LanguageServerStartOptions): void {
         let socketPort = this.getPort();
@@ -22,7 +22,7 @@ export class PoSTLanguageServerContribution extends BaseLanguageServerContributi
             socket.connect(socketPort);
         } else {
             console.log('No port available')
-            const jar = path.resolve(path.join(__dirname, '..', '..', 'build', POST_LANGUAGE_SERVER_JAR_NAME));
+            const jar = path.resolve(path.join(__dirname, '..', '..', 'build', EDTL_LANGUAGE_SERVER_JAR_NAME));
             const command = 'java';
             const args: string[] = [
                 '-jar',

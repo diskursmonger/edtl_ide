@@ -31,8 +31,8 @@ export class GenerateCommandContribution implements CommandContribution {
     registerCommands(registry: CommandRegistry): void {
         registry.registerCommand(GenerateCommand, this.newUriAwareCommandHandler({
             execute: (uri: URI) => this.generatorService.generate(uri),
-            isVisible: (uri: URI) => uri.toString().endsWith('post'),
-            isEnabled: (uri: URI) => uri.toString().endsWith("post")
+            isVisible: (uri: URI) => uri.toString().endsWith('edtl'),
+            isEnabled: (uri: URI) => uri.toString().endsWith("edtl")
         }));
         // registry.registerCommand(GenerateCommand, {
         //     execute: async () => {

@@ -31,8 +31,8 @@ export class DSMMenuContribution implements MenuContribution {
                 execute: (uri: URI[]) => {
                     this.dsmWrapperServer.runDSM(command.id, uri.map(uri => uri.toString()))
                 },
-                isEnabled: (uri: URI[]) => uri.every((value => value.toString().endsWith('post'))),
-                isVisible: (uri: URI[]) => uri.every((value => value.toString().endsWith('post')))
+                isEnabled: (uri: URI[]) => uri.every((value => value.toString().endsWith('edtl'))),
+                isVisible: (uri: URI[]) => uri.every((value => value.toString().endsWith('edtl')))
             }, { multi: true });
             this.commands.registerCommand(command, cmdHandler);
             menus.registerMenuAction(menuPath, { commandId: command.id });
